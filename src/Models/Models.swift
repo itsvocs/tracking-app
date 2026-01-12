@@ -198,3 +198,19 @@ final class AppSettings {
         self.dailyReminderTime = calendar.date(from: components)
     }
 }
+
+/// Model für den Chat (KI)
+@Model
+class Chatbot{
+    @Attribute(.unique) var id: UUID
+    
+    //Parameter für die Unterhaltung
+    var text: String
+    var timestamp: Date
+    
+    init(text:String){
+        self.id = UUID()
+        self.text = text
+        self.timestamp = Date()
+    }
+}

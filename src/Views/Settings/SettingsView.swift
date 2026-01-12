@@ -375,6 +375,11 @@ struct DataPrivacyDetailView: View {
     }
 }
 
+// MARK: - Weitere Einstellungen (Dark Modus + Sprache)
+
+
+
+
 struct PrivacyPoint: View {
     let icon: String
     let title: String

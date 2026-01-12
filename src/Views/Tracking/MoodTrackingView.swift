@@ -17,6 +17,8 @@ struct MoodTrackingView: View {
     @StateObject private var moodViewModel = MoodViewModel()
     @State private var showSuccessMessage = false
     
+    //Einstellung für den Chat
+    @State private var showChat = false
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -41,6 +43,22 @@ struct MoodTrackingView: View {
                 .padding()
             }
             .navigationTitle("Gefühle")
+            
+            //Icon für den Chat
+            .toolbar{
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Button {
+                        showChat = true
+                    } label :{
+                        Image(systemName: "message.fill")
+                    }
+                    .accessibilityLabel("Chat öffnen")
+                }
+            }
+            .navigationDestination(isPresented: $showChat){
+                ChatView()
+            }
+            // Ende
             .onAppear {
                 setupViewModel()
                 moodViewModel.loadTodayMoodEntry()

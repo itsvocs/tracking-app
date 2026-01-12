@@ -12,8 +12,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9FE5D8702F14F74D00AD60B3 /* tracking-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tracking-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C4D81C2F11C81E00D9BB18 /* tracking-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "tracking-app.entitlements"; sourceTree = "<group>"; };
-		B4C4D8252F11EE5200D9BB18 /* tracking-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "tracking-app.app"; path = "/Users/jo./Documents/Projet/uni-projekt/tracking-app/build/Debug-iphoneos/tracking-app.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -42,6 +42,7 @@
 			children = (
 				B4C4D81C2F11C81E00D9BB18 /* tracking-app.entitlements */,
 				B4C4D7DB2F11A4D200D9BB18 /* src */,
+				9FE5D8702F14F74D00AD60B3 /* tracking-app.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,7 +70,7 @@
 				B4C4D8202F11D63E00D9BB18 /* GoogleSignInSwift */,
 			);
 			productName = "tracking-app";
-			productReference = B4C4D8252F11EE5200D9BB18 /* tracking-app.app */;
+			productReference = 9FE5D8702F14F74D00AD60B3 /* tracking-app.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -267,6 +268,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,6 +304,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
