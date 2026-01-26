@@ -17,6 +17,8 @@ struct SettingsView: View {
     @Query private var settings: [AppSettings]
     //Theme
     @State private var theme: AppTheme = .system
+    @State private var showLanguagePicker = false
+    
     @State private var showingProfileEdit = false
     @State private var showingLogoutConfirmation = false
     @State private var notificationsEnabled = true
@@ -55,11 +57,20 @@ struct SettingsView: View {
             }.onChange(of: theme){_, newValue in
                 appViewModel.theme = newValue
             }
+            
             .navigationTitle("Einstellungen")
+            .toolbar{
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Button{
+                        showLanguagePicker = true
+                    } label: {
+                        Image (systemName:"globe")
+                    }
+                }
+                
+            }
             .onAppear {
                 loadSettings()
-                
-            
             }
             .sheet(isPresented: $showingProfileEdit) {
                 ProfileEditView()
@@ -78,6 +89,10 @@ struct SettingsView: View {
             .onChange(of: selectedReminderTime) { _, newTime in
                 updateReminderTime(newTime)
             }
+        }
+        .sheet(isPresented: $showLanguagePicker){
+            LanguagePickerView()
+                .environmentObject(appViewModel)
         }
     }
     

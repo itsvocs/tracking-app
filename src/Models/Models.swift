@@ -239,3 +239,19 @@ enum AppTheme: String, CaseIterable, Identifiable {
         }
     }
 }
+//enum für Sprachen
+enum AppLanguage:String, CaseIterable, Identifiable, Codable {
+        case de = "Deutsch"
+        case en = "English"
+        case fr = "Français"
+
+        var id: String { rawValue }
+
+        var localeIdentifier: String {
+            switch self {
+            case .de: return "de"
+            case .en: return "en"
+            case .fr: return "fr"
+            }
+        }
+    }

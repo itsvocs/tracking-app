@@ -47,6 +47,8 @@ struct TrackingApp: App {
                     appViewModel.modelContext = modelContainer.mainContext
                 }
                 .preferredColorScheme(appViewModel.theme.colorScheme) // Ermöglicht Dark Mode
+                .environment(\.locale, Locale(identifier: appViewModel.language.localeIdentifier)
+                )
         }
     }
 }
