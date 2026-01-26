@@ -52,10 +52,14 @@ struct SettingsView: View {
                 
                 // Logout Section
                 LogoutSection(showingConfirmation: $showingLogoutConfirmation)
+            }.onChange(of: theme){_, newValue in
+                appViewModel.theme = newValue
             }
             .navigationTitle("Einstellungen")
             .onAppear {
                 loadSettings()
+                
+            
             }
             .sheet(isPresented: $showingProfileEdit) {
                 ProfileEditView()
@@ -398,7 +402,7 @@ struct ThemeSection: View {
                             Image(systemName: theme == option
                                   ? "largecircle.fill.circle"
                                   : "circle")
-                                .foregroundColor(.black)
+                                .foregroundColor(.blue)
                         }
                         .buttonStyle(.plain)
 
