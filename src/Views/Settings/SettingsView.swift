@@ -15,7 +15,8 @@ struct SettingsView: View {
     @EnvironmentObject var appViewModel: AppViewModel
     
     @Query private var settings: [AppSettings]
-    
+    //Theme
+    @State private var theme: AppTheme = .system
     @State private var showingProfileEdit = false
     @State private var showingLogoutConfirmation = false
     @State private var notificationsEnabled = true
@@ -45,6 +46,9 @@ struct SettingsView: View {
                 
                 // About Section
                 AboutSection()
+                
+                //Theme Section
+                ThemeSection(theme: $theme)
                 
                 // Logout Section
                 LogoutSection(showingConfirmation: $showingLogoutConfirmation)
@@ -377,7 +381,37 @@ struct DataPrivacyDetailView: View {
 
 // MARK: - Weitere Einstellungen (Dark Modus + Sprache)
 
+struct ThemeSection: View {
+    @Binding var theme: AppTheme
 
+    var body: some View {
+        Section {
+            VStack(alignment: .leading, spacing: 16) {
+                Text("Theme auswählen")
+                    .font(.headline)
+
+                ForEach(AppTheme.allCases) { option in
+                    HStack {
+                        Button {
+                            theme = option
+                        } label: {
+                            Image(systemName: theme == option
+                                  ? "largecircle.fill.circle"
+                                  : "circle")
+                                .foregroundColor(.black)
+                        }
+                        .buttonStyle(.plain)
+
+                        Text(option.title)
+                    }
+                }
+            }
+            .padding(.vertical, 4)
+        } header: {
+            Text("Weitere Einstellungen")
+        }
+    }
+}
 
 
 struct PrivacyPoint: View {

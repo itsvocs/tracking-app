@@ -23,6 +23,8 @@ class AppViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     
+    @Published var theme: AppTheme = .system
+    
     // Services
     private let healthKitManager = HealthKitManager.shared
     private let notificationManager = NotificationManager.shared

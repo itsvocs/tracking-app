@@ -11,6 +11,7 @@ import SwiftUI
 struct MainTabView: View {
     
     @State private var selectedTab = 0
+    @EnvironmentObject var appViewModel: AppViewModel
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -42,6 +43,7 @@ struct MainTabView: View {
                 }
                 .tag(3)
         }
+        .preferredColorScheme(appViewModel.theme.colorScheme)
         .accentColor(.blue)
     }
 }

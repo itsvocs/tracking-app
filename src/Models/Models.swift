@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftData
-
+import SwiftUI
 /// Model für Benutzer-Stammdaten
 @Model
 final class User {
@@ -212,5 +212,30 @@ class Chatbot{
         self.id = UUID()
         self.text = text
         self.timestamp = Date()
+    }
+}
+
+//enum Theme
+enum AppTheme: String, CaseIterable, Identifiable {
+    case system
+    case light
+    case dark
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .system: return "System"
+        case .light: return "Hell"
+        case .dark: return "Dunkel"
+        }
+    }
+
+    var colorScheme: ColorScheme? {
+        switch self {
+        case .system: return nil
+        case .light: return .light
+        case .dark: return .dark
+        }
     }
 }
