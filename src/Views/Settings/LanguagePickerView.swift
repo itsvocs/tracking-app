@@ -54,6 +54,10 @@ struct LanguagePickerView: View {
             }
             .font(.headline)
         }
+        .onChange(of: appViewModel.language){
+            _, newValue in print(newValue.rawValue)
+            
+        }
         .padding()
     }
 }
