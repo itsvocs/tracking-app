@@ -66,11 +66,11 @@ tracking-app/
 ## Entwicklungsplan (4 Wochen)
 
 ### Woche 1: Setup & Grundstruktur
-- [ ] Xcode-Projekt erstellen
-- [ ] MVVM-Struktur aufsetzen
-- [ ] SwiftData Models definieren
+- [x] Xcode-Projekt erstellen
+- [x] MVVM-Struktur aufsetzen
+- [x] SwiftData Models definieren
 - [ ] Google Sign-In Integration
-- [ ] Basis-Navigation
+- [x] Basis-Navigation
 
 ### Woche 2: Core Features
 - [ ] HealthKit Integration
