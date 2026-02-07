@@ -15,6 +15,9 @@ struct SettingsView: View {
     @EnvironmentObject var appViewModel: AppViewModel
     
     @Query private var settings: [AppSettings]
+    //Theme
+    @State private var theme: AppTheme = .system
+    @State private var showLanguagePicker = false
     
     @State private var showingProfileEdit = false
     @State private var showingLogoutConfirmation = false
@@ -46,10 +49,26 @@ struct SettingsView: View {
                 // About Section
                 AboutSection()
                 
+                //Theme Section
+                ThemeSection(theme: $theme)
+                
                 // Logout Section
                 LogoutSection(showingConfirmation: $showingLogoutConfirmation)
+            }.onChange(of: theme){_, newValue in
+                appViewModel.theme = newValue
             }
+            
             .navigationTitle("Einstellungen")
+            .toolbar{
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Button{
+                        showLanguagePicker = true
+                    } label: {
+                        Image (systemName:"globe")
+                    }
+                }
+                
+            }
             .onAppear {
                 loadSettings()
             }
@@ -70,6 +89,10 @@ struct SettingsView: View {
             .onChange(of: selectedReminderTime) { _, newTime in
                 updateReminderTime(newTime)
             }
+        }
+        .sheet(isPresented: $showLanguagePicker){
+            LanguagePickerView()
+                .environmentObject(appViewModel)
         }
     }
     
@@ -377,7 +400,37 @@ struct DataPrivacyDetailView: View {
 
 // MARK: - Weitere Einstellungen (Dark Modus + Sprache)
 
+struct ThemeSection: View {
+    @Binding var theme: AppTheme
 
+    var body: some View {
+        Section {
+            VStack(alignment: .leading, spacing: 16) {
+                Text("Theme auswählen")
+                    .font(.headline)
+
+                ForEach(AppTheme.allCases) { option in
+                    HStack {
+                        Button {
+                            theme = option
+                        } label: {
+                            Image(systemName: theme == option
+                                  ? "largecircle.fill.circle"
+                                  : "circle")
+                                .foregroundColor(.blue)
+                        }
+                        .buttonStyle(.plain)
+
+                        Text(option.title)
+                    }
+                }
+            }
+            .padding(.vertical, 4)
+        } header: {
+            Text("Weitere Einstellungen")
+        }
+    }
+}
 
 
 struct PrivacyPoint: View {

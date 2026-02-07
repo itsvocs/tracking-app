@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F33E0F02F27BE0500589D88 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9F33E0EF2F27BE0500589D88 /* Localizable.xcstrings */; };
 		B4C4D81F2F11D63E00D9BB18 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B4C4D81E2F11D63E00D9BB18 /* GoogleSignIn */; };
 		B4C4D8212F11D63E00D9BB18 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B4C4D8202F11D63E00D9BB18 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F33E0EF2F27BE0500589D88 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9FE5D8702F14F74D00AD60B3 /* tracking-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tracking-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C4D81C2F11C81E00D9BB18 /* tracking-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "tracking-app.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -40,6 +42,7 @@
 		B4C4D7D02F11A4D200D9BB18 = {
 			isa = PBXGroup;
 			children = (
+				9F33E0EF2F27BE0500589D88 /* Localizable.xcstrings */,
 				B4C4D81C2F11C81E00D9BB18 /* tracking-app.entitlements */,
 				B4C4D7DB2F11A4D200D9BB18 /* src */,
 				9FE5D8702F14F74D00AD60B3 /* tracking-app.app */,
@@ -94,6 +97,8 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
+				de,
 			);
 			mainGroup = B4C4D7D02F11A4D200D9BB18;
 			minimizedProjectReferenceProxies = 1;
@@ -115,6 +120,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F33E0F02F27BE0500589D88 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +196,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -246,6 +253,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
