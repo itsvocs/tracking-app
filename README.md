@@ -69,34 +69,32 @@ tracking-app/
 - [x] Xcode-Projekt erstellen
 - [x] MVVM-Struktur aufsetzen
 - [x] SwiftData Models definieren
-- [ ] Google Sign-In Integration
 - [x] Basis-Navigation
 
 ### Woche 2: Core Features
-- [ ] HealthKit Integration
-- [ ] Gefühls-Tracking UI
-- [ ] Datenerfassung und -speicherung
-- [ ] Basic Dashboard
+- [x] HealthKit Integration
+- [x] Gefühls-Tracking UI
+- [x] Datenerfassung und -speicherung
+- [x] Basic Dashboard
 
 ### Woche 3: Visualisierung & Features
-- [ ] Graphen-Komponenten
-- [ ] Statistik-Ansichten
-- [ ] Benachrichtigungen
-- [ ] Einstellungen
+- [x] Graphen-Komponenten
+- [x] Statistik-Ansichten
+- [x] Benachrichtigungen
+- [x] Einstellungen
 
 ### Woche 4: Polish & Testing
-- [ ] Dark Mode Feinschliff
-- [ ] UI/UX Verbesserungen
-- [ ] Testing im Simulator
-- [ ] Dokumentation
-- [ ] Bug Fixes
+- [x] Dark Mode Feinschliff
+- [x] UI/UX Verbesserungen
+- [x] Testing im Simulator
+- [x] Dokumentation
+- [x] Bug Fixes
 
 ## Installation & Setup
 
 ### Voraussetzungen
-- Xcode 15+
-- iOS 17+ SDK
-- Google Cloud Console Projekt für OAuth
+- Xcode 26+
+- iOS 26+ SDK
 
 ### Setup-Schritte
 1. Repository klonen
